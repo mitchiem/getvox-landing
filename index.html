@@ -364,23 +364,89 @@
     </div>
   </section>
 
-  <!-- Problem -->
-  <section class="section container fade-up" id="problem">
+  <!-- Cartoon Comparison -->
+  <section class="section container fade-up" id="comparison">
     <div class="text-center mb-6">
-      <span class="section-label">The Problem</span>
-      <h2>Sales coaching is <em style="color:var(--accent); font-style:normal;">broken</em>.</h2>
-      <p style="max-width:650px; margin:1.5rem auto 0; color:var(--text-muted); font-size:1.1rem;">Most reps get feedback only once a month — and managers can’t sit in on every call. GetVox fixes that by coaching <strong>every</strong> call, in real time, without the customer ever hearing a thing.</p>
+      <span class="section-label">The Difference</span>
+      <h2>One call, two outcomes.</h2>
+      <p style="max-width:650px; margin:1.5rem auto 0; color:var(--text-muted); font-size:1.1rem;">
+        Same customer objection — but only one rep gets the whisper they need to close the deal.
+      </p>
     </div>
     <div class="comparison-grid">
-      <div class="comparison-card negative">
-        <h3>⛔ Without GetVox</h3>
-        <p>Generic feedback weeks later, missed opportunities, inconsistent performance, and no real‑time guidance when it matters most.</p>
+      <!-- Left: Without GetVox -->
+      <div class="comparison-card negative" style="background:#fff5f5; border-color:#fca5a5;">
+        <div style="height:200px; display:flex; align-items:center; justify-content:center; position:relative;">
+          <!-- Stick figures: confused rep + customer -->
+          <div style="display:flex; gap:2rem; align-items:flex-end;">
+            <!-- Customer -->
+            <div style="text-align:center;">
+              <div style="font-size:3rem;">🧔</div>
+              <div style="font-size:0.75rem; color:#64748B; margin-top:0.2rem;">Customer</div>
+              <div style="background:#fee2e2; border:2px solid #fca5a5; border-radius:8px; padding:0.4rem 0.8rem; font-size:0.75rem; color:#991b1b; max-width:120px; margin-top:0.3rem;">
+                “Can you beat $3,200?”
+              </div>
+            </div>
+            <!-- Rep (confused, no whisper) -->
+            <div style="text-align:center;">
+              <div style="font-size:3rem;">🤷‍♂️</div>
+              <div style="font-size:0.75rem; color:#64748B; margin-top:0.2rem;">Rep</div>
+              <div style="background:#e2e8f0; border:2px dashed #94a3b8; border-radius:8px; padding:0.4rem 0.8rem; font-size:0.75rem; color:#64748B; max-width:120px; margin-top:0.3rem;">
+                <em>“Uhh... let me check...”</em>
+              </div>
+              <!-- X marks -->
+              <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); font-size:2rem; color:#dc2626;">❌</div>
+            </div>
+          </div>
+        </div>
+        <h3 style="color:#dc2626;">⛔ Without GetVox</h3>
+        <p style="color:#991b1b;">Rep freezes, loses the deal. No real-time support means missed opportunities and inconsistent performance.</p>
       </div>
-      <div class="comparison-card positive">
-        <h3>✅ With GetVox</h3>
-        <p>Real‑time, contextual coaching for every call — immediate insights, consistent improvement, and a 14% average lift in conversion within the first month.</p>
+
+      <!-- Right: With GetVox -->
+      <div class="comparison-card positive" style="background:#f0fdfa; border-color:#6ee7b7;">
+        <div style="height:200px; display:flex; align-items:center; justify-content:center; position:relative;">
+          <div style="display:flex; gap:2rem; align-items:flex-end;">
+            <!-- Customer -->
+            <div style="text-align:center;">
+              <div style="font-size:3rem;">🧔</div>
+              <div style="font-size:0.75rem; color:#64748B; margin-top:0.2rem;">Customer</div>
+              <div style="background:#fee2e2; border:2px solid #fca5a5; border-radius:8px; padding:0.4rem 0.8rem; font-size:0.75rem; color:#991b1b; max-width:120px; margin-top:0.3rem;">
+                “Can you beat $3,200?”
+              </div>
+            </div>
+            <!-- Rep (confident, whisper visible) -->
+            <div style="text-align:center; position:relative;">
+              <div style="font-size:3rem;">😎</div>
+              <div style="font-size:0.75rem; color:#64748B; margin-top:0.2rem;">Rep</div>
+              <div style="background:#e2e8f0; border:2px solid #10b981; border-radius:8px; padding:0.4rem 0.8rem; font-size:0.75rem; color:#065f46; max-width:120px; margin-top:0.3rem;">
+                <strong>“We include free valuation...”</strong>
+              </div>
+              <!-- Whisper bubble from GetVox -->
+              <div style="position:absolute; top:-40px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg, rgba(6,214,208,0.15), rgba(17,138,178,0.15)); border:2px solid var(--accent); border-radius:12px; padding:0.5rem; min-width:200px; animation:whisperFloat 2s infinite;">
+                <div style="display:flex; align-items:center; gap:0.3rem; margin-bottom:0.2rem;">
+                  <span style="font-size:0.6rem; color:var(--accent); font-weight:700;">🤖 GetVox Whisper</span>
+                  <span style="font-size:0.5rem; color:#94a3b8;">🔒</span>
+                </div>
+                <p style="font-size:0.7rem; color:#065f46; margin:0;">Anchor on value — mention free home valuation before discussing price.</p>
+              </div>
+              <!-- Check mark -->
+              <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); font-size:2rem; color:#10b981;">✅</div>
+            </div>
+          </div>
+        </div>
+        <h3 style="color:#065f46;">✅ With GetVox</h3>
+        <p style="color:#065f46;">AI whispers real‑time guidance, rep stays confident, closes more deals — <strong>14% avg conversion lift.</strong></p>
       </div>
     </div>
+
+    <!-- Animated whisper float keyframe -->
+    <style>
+      @keyframes whisperFloat {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(-6px); }
+      }
+    </style>
   </section>
 
   <!-- Features -->
@@ -655,10 +721,13 @@
       <div class="pricing-card">
         <h3>Starter</h3>
         <div class="price">$49<span>/seat/mo</span></div>
+        <p style="color:var(--accent); font-weight:700; margin:0.5rem 0;">300 AI min included</p>
+        <p style="font-size:0.8rem; color:var(--text-muted);">~10 min/day per rep</p>
         <ul class="features-list">
           <li>Live whisper coaching</li>
           <li>Basic scorecards</li>
           <li>Email support</li>
+          <li>Overage: $0.10/min</li>
         </ul>
         <a href="#cta" class="btn btn-outline">Choose Plan</a>
       </div>
@@ -666,26 +735,33 @@
         <span class="badge">Most Popular</span>
         <h3>Professional</h3>
         <div class="price alt">$99<span>/seat/mo</span></div>
+        <p style="color:var(--accent); font-weight:700; margin:0.5rem 0;">600 AI min included</p>
+        <p style="font-size:0.8rem; color:rgba(255,255,255,0.7);">~20 min/day per rep</p>
         <ul class="features-list">
           <li>Everything in Starter</li>
           <li>Custom playbooks</li>
           <li>CRM integration</li>
           <li>Slack notifications</li>
+          <li>Overage: $0.08/min</li>
         </ul>
         <a href="#cta" class="btn btn-primary">Choose Plan</a>
       </div>
       <div class="pricing-card">
         <h3>Enterprise</h3>
         <div class="price">Custom</div>
+        <p style="color:var(--accent); font-weight:700; margin:0.5rem 0;">Unlimited AI min</p>
+        <p style="font-size:0.8rem; color:var(--text-muted);">Bulk pricing available</p>
         <ul class="features-list">
           <li>Full white‑label</li>
           <li>Dedicated AI training</li>
           <li>Compliance monitoring</li>
           <li>Priority support</li>
+          <li>Custom overage rates</li>
         </ul>
         <a href="#cta" class="btn btn-outline">Contact Sales</a>
       </div>
     </div>
+    <p style="text-align:center; margin-top:1rem; color:var(--text-muted); font-size:0.85rem;">All plans include 14-day free trial · No credit card required · Cancel anytime</p>
   </section>
 
   <!-- Final CTA -->
