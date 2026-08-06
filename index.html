@@ -450,7 +450,74 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- Product Demo -->
+  <section class="section" id="demo" style="background:linear-gradient(to bottom, #fff 0%, var(--bg-light) 100%);">
+    <div class="container">
+      <div class="text-center mb-6 fade-up">
+        <span class="section-label">Product Demo</span>
+        <h2>See the whisper <em style="color:var(--accent); font-style:normal;">in action</em>.</h2>
+        <p style="max-width:600px; margin:1rem auto 0; color:var(--text-muted); font-size:1.05rem;">This is exactly what your rep sees during a live call — the customer only hears a great conversation.</p>
+      </div>
+      <!-- Call UI Mockup -->
+      <div class="call-simulator fade-up" style="max-width:480px; margin:0 auto; background:#131a33; border-radius:24px; overflow:hidden; box-shadow:0 30px 60px -15px rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.08);">
+        <!-- Call Header -->
+        <div style="background:#0b0f1e; padding:1.5rem; text-align:center; border-bottom:1px solid rgba(255,255,255,0.05);">
+          <div class="caller-avatar" style="width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg, #2d3748, #4a5568); margin:0 auto 0.8rem; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.4rem; color:#cbd5e0;">JD</div>
+          <p style="color:#fff; font-weight:600; font-size:1.1rem; margin:0;">John Davidson</p>
+          <p style="color:#64748B; font-size:0.85rem; margin:0.2rem 0;">Moving Company Lead • Inbound</p>
+          <div style="display:inline-flex; align-items:center; gap:0.3rem; margin-top:0.5rem;">
+            <span style="width:8px; height:8px; background:#10b981; border-radius:50%; display:inline-block; animation:pulse-dot 1.5s infinite;"></span>
+            <span style="color:#10b981; font-size:0.8rem; font-weight:500;">Live • 02:34</span>
+          </div>
+        </div>
+        <!-- Call Body -->
+        <div style="padding:1.5rem;">
+          <!-- Transcript -->
+          <div style="display:flex; flex-direction:column; gap:1rem;">
+            <!-- Customer bubble -->
+            <div style="display:flex; gap:0.6rem; align-items:flex-start;">
+              <div style="width:32px; height:32px; border-radius:50%; background:#4a5568; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#cbd5e0; font-weight:700; font-size:0.8rem;">JD</div>
+              <div style="background:#1e293b; padding:0.7rem 1rem; border-radius:16px 16px 16px 4px; color:#e2e8f0; font-size:0.9rem; max-width:320px;">
+                Yeah, I'm moving from Miami to Atlanta. Got a 3-bedroom house. What's your pricing?
+              </div>
+            </div>
+            <!-- Rep bubble -->
+            <div style="display:flex; gap:0.6rem; align-items:flex-start; flex-direction:row-reverse;">
+              <div style="width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg, var(--accent), var(--accent-alt)); flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#0b0f1e; font-weight:700; font-size:0.8rem;">REP</div>
+              <div style="background:var(--accent); padding:0.7rem 1rem; border-radius:16px 16px 4px 16px; color:#0b0f1e; font-size:0.9rem; font-weight:500; max-width:320px;">
+                Great question! Let me walk you through our rates…
+              </div>
+            </div>
+            <!-- Customer bubble -->
+            <div style="display:flex; gap:0.6rem; align-items:flex-start;">
+              <div style="width:32px; height:32px; border-radius:50%; background:#4a5568; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#cbd5e0; font-weight:700; font-size:0.8rem;">JD</div>
+              <div style="background:#1e293b; padding:0.7rem 1rem; border-radius:16px 16px 16px 4px; color:#e2e8f0; font-size:0.9rem; max-width:320px;">
+                Well, I got a quote from Allied for $3,200. Can you beat that?
+              </div>
+            </div>
+          </div>
+          <!-- Whisper Box (animated) -->
+          <div class="whisper-box" style="margin-top:1rem; background:linear-gradient(135deg, rgba(6,214,208,0.15), rgba(17,138,178,0.15)); border:1px solid rgba(6,214,208,0.4); border-radius:12px; padding:1rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+              <span style="color:var(--accent); font-weight:700; font-size:0.75rem; letter-spacing:0.05em; text-transform:uppercase;">GetVox Whisper</span>
+              <span style="font-size:0.7rem; color:#94a3b8; margin-left:auto;">Only you can see this</span>
+            </div>
+            <p style="color:#e2e8f0; font-size:0.95rem; margin:0; line-height:1.5;">
+              <strong style="color:var(--accent);">Tip:</strong> When the customer mentions price, use this time to emphasize value. Ask: "When do you need to be in Atlanta?" — creates urgency.
+            </p>
+            <div style="display:flex; gap:0.5rem; margin-top:0.8rem;">
+              <button class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-radius:8px;">👍 Use Prompt</button>
+              <button style="padding:0.4rem 0.8rem; font-size:0.75rem; border-radius:8px; background:transparent; border:1px solid rgba(255,255,255,0.2); color:#94a3b8; cursor:pointer;">✕ Dismiss</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:2rem; color:var(--text-muted); font-size:0.9rem;">
+        🔒 The whisper appears <strong>only</strong> on your rep's screen — the customer hears nothing but a confident conversation.
+      </p>
+    </div>
+  </section>
   <section class="section" style="background:#fff;">
     <div class="container">
       <div class="text-center mb-6 fade-up">
