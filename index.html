@@ -451,73 +451,153 @@
   </section>
 
   <!-- Product Demo -->
-  <section class="section" id="demo" style="background:linear-gradient(to bottom, #fff 0%, var(--bg-light) 100%);">
+  <section class="section" id="demo" style="background:linear-gradient(to bottom, #fff 0%, var(--bg-light) 100%); overflow:hidden;">
     <div class="container">
       <div class="text-center mb-6 fade-up">
         <span class="section-label">Product Demo</span>
         <h2>See the whisper <em style="color:var(--accent); font-style:normal;">in action</em>.</h2>
-        <p style="max-width:600px; margin:1rem auto 0; color:var(--text-muted); font-size:1.05rem;">This is exactly what your rep sees during a live call — the customer only hears a great conversation.</p>
+        <p style="max-width:650px; margin:1rem auto 0; color:var(--text-muted); font-size:1.05rem;">Watch how GetVox coaches your reps through real objections — <strong>the customer only hears a great conversation.</strong></p>
       </div>
-      <!-- Call UI Mockup -->
-      <div class="call-simulator fade-up" style="max-width:480px; margin:0 auto; background:#131a33; border-radius:24px; overflow:hidden; box-shadow:0 30px 60px -15px rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.08);">
-        <!-- Call Header -->
-        <div style="background:#0b0f1e; padding:1.5rem; text-align:center; border-bottom:1px solid rgba(255,255,255,0.05);">
-          <div class="caller-avatar" style="width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg, #2d3748, #4a5568); margin:0 auto 0.8rem; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.4rem; color:#cbd5e0;">JD</div>
-          <p style="color:#fff; font-weight:600; font-size:1.1rem; margin:0;">John Davidson</p>
-          <p style="color:#64748B; font-size:0.85rem; margin:0.2rem 0;">Moving Company Lead • Inbound</p>
-          <div style="display:inline-flex; align-items:center; gap:0.3rem; margin-top:0.5rem;">
-            <span style="width:8px; height:8px; background:#10b981; border-radius:50%; display:inline-block; animation:pulse-dot 1.5s infinite;"></span>
-            <span style="color:#10b981; font-size:0.8rem; font-weight:500;">Live • 02:34</span>
+      
+      <!-- Live Demo Container -->
+      <div class="demo-stage fade-up" style="max-width:900px; margin:0 auto;">
+        <!-- Scenario Selector -->
+        <div class="scenario-tabs" style="display:flex; justify-content:center; gap:0.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
+          <button class="scenario-btn active" data-scenario="0" style="padding:0.6rem 1.2rem; border-radius:30px; border:1px solid #cbd5e1; background:#fff; cursor:pointer; font-weight:600; font-size:0.85rem; transition:all 0.2s;">Moving Sales</button>
+          <button class="scenario-btn" data-scenario="1" style="padding:0.6rem 1.2rem; border-radius:30px; border:1px solid #cbd5e1; background:#fff; cursor:pointer; font-weight:600; font-size:0.85rem; transition:all 0.2s;">Insurance Call</button>
+          <button class="scenario-btn" data-scenario="2" style="padding:0.6rem 1.2rem; border-radius:30px; border:1px solid #cbd5e1; background:#fff; cursor:pointer; font-weight:600; font-size:0.85rem; transition:all 0.2s;">B2B Tech</button>
+        </div>
+
+        <!-- Dual Column Layout -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:center;">
+          <!-- Left: Call Interface -->
+          <div class="call-simulator" style="background:#131a33; border-radius:24px; overflow:hidden; box-shadow:0 30px 60px -15px rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.08);">
+            <!-- Call Header -->
+            <div style="background:#0b0f1e; padding:1.2rem 1.5rem; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.05);">
+              <div style="display:flex; align-items:center; gap:0.8rem;">
+                <div class="caller-avatar" id="avatarEl" style="width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg, #2d3748, #4a5568); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1rem; color:#cbd5e0; transition:all 0.4s;">JD</div>
+                <div>
+                  <p id="callerName" style="color:#fff; font-weight:600; font-size:0.95rem; margin:0;">John Davidson</p>
+                  <p id="callerContext" style="color:#64748B; font-size:0.8rem; margin:0;">Moving Company Lead</p>
+                </div>
+              </div>
+              <div style="display:flex; align-items:center; gap:0.3rem;">
+                <span style="width:8px; height:8px; background:#10b981; border-radius:50%; animation:pulse-dot 1.5s infinite;"></span>
+                <span style="color:#10b981; font-size:0.8rem; font-weight:500;">Live</span>
+              </div>
+            </div>
+            
+            <!-- Waveform Visualization -->
+            <div style="padding:1rem 1.5rem; background:#0d1226; border-bottom:1px solid rgba(255,255,255,0.05);">
+              <div class="waveform" style="display:flex; align-items:flex-end; gap:3px; height:40px;">
+                <div class="wave-bar" style="animation:waveAnim 1.2s ease-in-out infinite; animation-delay:0s;"></div>
+                <div class="wave-bar" style="animation:waveAnim 1.2s ease-in-out infinite; animation-delay:0.1s;"></div>
+                <div class="wave-bar" style="animation:waveAnim 0.9s ease-in-out infinite; animation-delay:0.2s;"></div>
+                <div class="wave-bar" style="animation:waveAnim 1.4s ease-in-out infinite; animation-delay:0.3s;"></div>
+                <div class="wave-bar" style="animation:waveAnim 1.1s ease-in-out infinite; animation-delay:0.4s;"></div>
+                <div class="wave-bar" style="animation:waveAnim 0.8s ease-in-out infinite; animation-delay:0.5s;"></div>
+                <div class="wave-bar" style="animation:waveAnim 1.3s ease-in-out infinite; animation-delay:0.6s;"></div>
+                <div class="wave-bar" style="animation:waveAnim 1.0s ease-in-out infinite; animation-delay:0.7s;"></div>
+                <div class="wave-bar" style="animation:waveAnim 1.2s ease-in-out infinite; animation-delay:0.8s;"></div>
+                <div class="wave-bar" style="animation:waveAnim 0.9s ease-in-out infinite; animation-delay:0.9s;"></div>
+                <div class="wave-bar" style="animation:waveAnim 1.1s ease-in-out infinite; animation-delay:1.0s;"></div>
+                <div class="wave-bar" style="animation:waveAnim 1.3s ease-in-out infinite; animation-delay:1.1s;"></div>
+                <div class="wave-bar" style="animation:waveAnim 0.8s ease-in-out infinite; animation-delay:1.2s;"></div>
+                <div class="wave-bar" style="animation:waveAnim 0.5s ease-in-out infinite; animation-delay:0s;"></div>
+                <div class="wave-bar" style="animation:waveAnim 0.7s ease-in-out infinite; animation-delay:0.1s;"></div>
+              </div>
+              <p style="color:#64748B; font-size:0.7rem; text-align:center; margin-top:0.5rem;">Call in progress · AI actively listening</p>
+            </div>
+
+            <!-- Call Body (Transcript) -->
+            <div style="padding:1.5rem;" id="transcriptArea">
+              <!-- Customer bubble (dynamic) -->
+              <div class="transcript-intro" id="customerBubble" style="display:flex; gap:0.6rem; align-items:flex-start;">
+                <div style="width:32px; height:32px; border-radius:50%; background:#4a5568; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#cbd5e0; font-weight:700; font-size:0.8rem;">JD</div>
+                <div id="customerMsg" style="background:#1e293b; padding:0.7rem 1rem; border-radius:16px 16px 16px 4px; color:#e2e8f0; font-size:0.9rem; max-width:300px; transition:all 0.5s;">Yeah, I'm moving from Miami to Atlanta. Got a 3-bedroom house. What's your pricing?</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Whisper Panel -->
+          <div class="whisper-panel" id="whisperPanel" style="position:relative; padding:2rem; transition:all 0.6s;">
+            <!-- Processing indicator when no whisper -->
+            <div id="whisperProcessing" style="text-align:center; padding:2rem;">
+              <div style="display:flex; justify-content:center; gap:0.4rem; margin-bottom:1rem;">
+                <div style="width:12px; height:12px; border-radius:50%; background:var(--accent); animation:pulse-dot 1s infinite; animation-delay:0s;"></div>
+                <div style="width:12px; height:12px; border-radius:50%; background:var(--accent); animation:pulse-dot 1s infinite; animation-delay:0.2s;"></div>
+                <div style="width:12px; height:12px; border-radius:50%; background:var(--accent); animation:pulse-dot 1s infinite; animation-delay:0.4s;"></div>
+              </div>
+              <p style="color:var(--accent); font-weight:600; font-size:0.95rem; margin:0;">GetVox is listening...</p>
+              <p style="color:#94a3b8; font-size:0.8rem; margin:0.3rem 0;">Analyzing conversation tone, keywords, and objection patterns</p>
+            </div>
+
+            <!-- Whisper Output (hidden initially, shown after delay via js) -->
+            <div id="whisperOutput" style="display:none; animation:fadeInScale 0.5s ease-out;">
+              <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.8rem;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                <span style="color:var(--accent); font-weight:700; font-size:0.8rem; letter-spacing:0.05em; text-transform:uppercase;">GetVox Whisper</span>
+                <span style="font-size:0.7rem; color:#94a3b8; margin-left:auto;">🔒 Only rep sees this</span>
+              </div>
+              <div style="background:linear-gradient(135deg, rgba(6,214,208,0.1), rgba(17,138,178,0.1)); border:1px solid rgba(6,214,208,0.3); border-radius:12px; padding:1.2rem; position:relative; overflow:hidden;">
+                <div style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--accent), var(--accent-alt));"></div>
+                <div style="display:flex; gap:0.7rem;">
+                  <span style="font-size:1.2rem; flex-shrink:0;">💡</span>
+                  <div>
+                    <p id="whisperText" style="color:#e2e8f0; font-size:0.95rem; margin:0; line-height:1.5;"></p>
+                    <div id="suggestedLine" style="margin-top:0.7rem; padding:0.5rem 0.8rem; background:rgba(6,214,208,0.2); border-radius:8px; border-left:3px solid var(--accent);">
+                      <span style="font-size:0.75rem; color:#94a3b8;">Suggested response:</span>
+                      <p id="whisperLine" style="color:#fff; font-size:0.9rem; margin:0.2rem 0 0; font-style:italic;">"..."</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <!-- Call Body -->
-        <div style="padding:1.5rem;">
-          <!-- Transcript -->
-          <div style="display:flex; flex-direction:column; gap:1rem;">
-            <!-- Customer bubble -->
-            <div style="display:flex; gap:0.6rem; align-items:flex-start;">
-              <div style="width:32px; height:32px; border-radius:50%; background:#4a5568; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#cbd5e0; font-weight:700; font-size:0.8rem;">JD</div>
-              <div style="background:#1e293b; padding:0.7rem 1rem; border-radius:16px 16px 16px 4px; color:#e2e8f0; font-size:0.9rem; max-width:320px;">
-                Yeah, I'm moving from Miami to Atlanta. Got a 3-bedroom house. What's your pricing?
-              </div>
-            </div>
-            <!-- Rep bubble -->
-            <div style="display:flex; gap:0.6rem; align-items:flex-start; flex-direction:row-reverse;">
-              <div style="width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg, var(--accent), var(--accent-alt)); flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#0b0f1e; font-weight:700; font-size:0.8rem;">REP</div>
-              <div style="background:var(--accent); padding:0.7rem 1rem; border-radius:16px 16px 4px 16px; color:#0b0f1e; font-size:0.9rem; font-weight:500; max-width:320px;">
-                Great question! Let me walk you through our rates…
-              </div>
-            </div>
-            <!-- Customer bubble -->
-            <div style="display:flex; gap:0.6rem; align-items:flex-start;">
-              <div style="width:32px; height:32px; border-radius:50%; background:#4a5568; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:#cbd5e0; font-weight:700; font-size:0.8rem;">JD</div>
-              <div style="background:#1e293b; padding:0.7rem 1rem; border-radius:16px 16px 16px 4px; color:#e2e8f0; font-size:0.9rem; max-width:320px;">
-                Well, I got a quote from Allied for $3,200. Can you beat that?
-              </div>
-            </div>
-          </div>
-          <!-- Whisper Box (animated) -->
-          <div class="whisper-box" style="margin-top:1rem; background:linear-gradient(135deg, rgba(6,214,208,0.15), rgba(17,138,178,0.15)); border:1px solid rgba(6,214,208,0.4); border-radius:12px; padding:1rem;">
-            <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
-              <span style="color:var(--accent); font-weight:700; font-size:0.75rem; letter-spacing:0.05em; text-transform:uppercase;">GetVox Whisper</span>
-              <span style="font-size:0.7rem; color:#94a3b8; margin-left:auto;">Only you can see this</span>
-            </div>
-            <p style="color:#e2e8f0; font-size:0.95rem; margin:0; line-height:1.5;">
-              <strong style="color:var(--accent);">Tip:</strong> When the customer mentions price, use this time to emphasize value. Ask: "When do you need to be in Atlanta?" — creates urgency.
-            </p>
-            <div style="display:flex; gap:0.5rem; margin-top:0.8rem;">
-              <button class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.75rem; border-radius:8px;">👍 Use Prompt</button>
-              <button style="padding:0.4rem 0.8rem; font-size:0.75rem; border-radius:8px; background:transparent; border:1px solid rgba(255,255,255,0.2); color:#94a3b8; cursor:pointer;">✕ Dismiss</button>
-            </div>
-          </div>
-        </div>
       </div>
+      
       <p style="text-align:center; margin-top:2rem; color:var(--text-muted); font-size:0.9rem;">
         🔒 The whisper appears <strong>only</strong> on your rep's screen — the customer hears nothing but a confident conversation.
       </p>
     </div>
   </section>
+
+  <!-- Animated Whisper Keyframes -->
+  <style>
+    @keyframes waveAnim {
+      0%, 100% { height: 15px; }
+      50% { height: 35px; }
+    }
+    .wave-bar {
+      width: 4px;
+      border-radius: 2px;
+      background: linear-gradient(to top, var(--accent), var(--accent-alt));
+      height: 20px;
+    }
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.9) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    @keyframes whisperGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(6,214,208,0.2); }
+      50% { box-shadow: 0 0 40px rgba(6,214,208,0.5); }
+    }
+    .scenario-btn.active {
+      background: var(--accent) !important;
+      color: #0b0f1e !important;
+      border-color: var(--accent) !important;
+    }
+
+    @media (max-width: 768px) {
+      .demo-stage > div:last-child {
+        grid-template-columns: 1fr !important;
+      }
+      .whisper-panel {
+        padding: 1rem !important;
+      }
+    }
+  </style>
   <section class="section" style="background:#fff;">
     <div class="container">
       <div class="text-center mb-6 fade-up">
@@ -755,6 +835,92 @@
       }, { threshold: 0.5 });
       countEls.forEach(function(el) { observer.observe(el); });
     })();
+  </script>
+  <!-- Demo cycling logic -->
+  <script>
+    var scenarios = [
+      {
+        name: "John Davidson",
+        initials: "JD",
+        context: "Moving Company Lead",
+        msg: "I'm moving from Miami to Atlanta. Got a 3-bedroom house. What's your pricing?",
+        whisper: "When prospect mentions price, pivot to value. Emphasize your personalized move coordinator and free binding estimates.",
+        line: "\"I'd love to put together a binding estimate for you — no surprises, no hidden fees. When do you need to be in Atlanta?\""
+      },
+      {
+        name: "Maria Gonzalez",
+        initials: "MG",
+        context: "Insurance Renewal Call",
+        msg: "My auto renewal went up 25%. I'm shopping around. What can you do better?",
+        whisper: "Retention opportunity! Anchor on loyalty benefits. Offer to review coverages for savings before discussing price.",
+        line: "\"Let's review your current coverage together — most customers save 15% just by bundling home and auto. Can I pull up your policy?\""
+      },
+      {
+        name: "David Chen",
+        initials: "DC",
+        context: "SaaS Demo Follow‑up",
+        msg: "We liked the demo, but your competitor offered 30% off. Why should we pay full price for your tool?",
+        whisper: "Differentiate on ROI, not discount. Reference case study where similar company saw 3x pipeline growth.",
+        line: "\"Our customers typically see a 3x pipeline increase within 90 days — the ROI covers the difference in month one. Can I share a quick case study?\""
+      }
+    ];
+    var currentScenario = 0;
+    var timer = null;
+    var ROTATE_INTERVAL = 6000;
+
+    function switchScenario(idx) {
+      currentScenario = idx;
+      var s = scenarios[idx];
+      document.getElementById('callerName').textContent = s.name;
+      document.getElementById('callerContext').textContent = s.context;
+      document.getElementById('avatarEl').textContent = s.initials;
+      document.getElementById('customerMsg').textContent = s.msg;
+
+      // reset whisper
+      var processing = document.getElementById('whisperProcessing');
+      var output = document.getElementById('whisperOutput');
+      processing.style.display = 'block';
+      output.style.display = 'none';
+
+      // show whisper after delay
+      clearTimeout(window._whisperTimeout);
+      window._whisperTimeout = setTimeout(function() {
+        processing.style.display = 'none';
+        output.style.display = 'block';
+        output.style.animation = 'none';
+        output.offsetHeight;
+        output.style.animation = 'fadeInScale 0.5s ease-out';
+        document.getElementById('whisperText').textContent = s.whisper;
+        document.getElementById('whisperLine').textContent = s.line;
+      }, 2000);
+
+      // update active tab
+      document.querySelectorAll('.scenario-btn').forEach(function(b) {
+        b.classList.toggle('active', b.dataset.scenario == idx);
+      });
+    }
+
+    // Tab clicks
+    document.querySelectorAll('.scenario-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        switchScenario(parseInt(btn.dataset.scenario));
+        resetAutoRotate();
+      });
+    });
+
+    function autoRotate() {
+      currentScenario = (currentScenario + 1) % scenarios.length;
+      switchScenario(currentScenario);
+      timer = setTimeout(autoRotate, ROTATE_INTERVAL);
+    }
+    function resetAutoRotate() {
+      clearTimeout(timer);
+      timer = setTimeout(autoRotate, ROTATE_INTERVAL);
+    }
+
+    // Init
+    switchScenario(0);
+    timer = setTimeout(autoRotate, ROTATE_INTERVAL);
   </script>
 </body>
 </html>
