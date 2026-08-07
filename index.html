@@ -373,12 +373,24 @@
         Same customer objection — but only one rep gets the whisper they need to close the deal.
       </p>
     </div>
-    <!-- Industry Tabs -->
-    <div class="scenario-tabs" style="display:flex; justify-content:center; gap:0.5rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-      <button class="scenario-btn cartoon-tab active" data-cartoon="0">Moving</button>
-      <button class="scenario-btn cartoon-tab" data-cartoon="1">Insurance</button>
-      <button class="scenario-btn cartoon-tab" data-cartoon="2">B2B Tech</button>
-      <button class="scenario-btn cartoon-tab" data-cartoon="3">Real Estate</button>
+    <!-- Industry Tabs (scrollable) -->
+    <div class="cartoon-tabs-wrapper" style="overflow-x:auto; white-space:nowrap; -webkit-overflow-scrolling:touch; padding-bottom:0.5rem; margin-bottom:1.5rem; display:flex; justify-content:center;">
+      <div class="scenario-tabs" style="display:flex; gap:0.5rem; flex-wrap:nowrap;">
+      <button class="scenario-btn cartoon-tab active" data-cartoon="0" style="flex-shrink:0;">Moving</button>
+      <button class="scenario-btn cartoon-tab" data-cartoon="1" style="flex-shrink:0;">Insurance</button>
+      <button class="scenario-btn cartoon-tab" data-cartoon="2" style="flex-shrink:0;">B2B Tech</button>
+      <button class="scenario-btn cartoon-tab" data-cartoon="3" style="flex-shrink:0;">Real Estate</button>
+      <button class="scenario-btn cartoon-tab" data-cartoon="4" style="flex-shrink:0;">Solar Sales</button>
+      <button class="scenario-btn cartoon-tab" data-cartoon="5" style="flex-shrink:0;">Legal Services</button>
+      <button class="scenario-btn cartoon-tab" data-cartoon="6" style="flex-shrink:0;">Healthcare</button>
+      <button class="scenario-btn cartoon-tab" data-cartoon="7" style="flex-shrink:0;">Debt Collection</button>
+      <button class="scenario-btn cartoon-tab" data-cartoon="8" style="flex-shrink:0;">Travel Agency</button>
+      <button class="scenario-btn cartoon-tab" data-cartoon="9" style="flex-shrink:0;">Auto Dealership</button>
+      <button class="scenario-btn cartoon-tab" data-cartoon="10" style="flex-shrink:0;">Mortgage Broker</button>
+      <button class="scenario-btn cartoon-tab" data-cartoon="11" style="flex-shrink:0;">Home Security</button>
+      <button class="scenario-btn cartoon-tab" data-cartoon="12" style="flex-shrink:0;">Staffing Agency</button>
+      <button class="scenario-btn cartoon-tab" data-cartoon="13" style="flex-shrink:0;">Fitness Club</button>
+      </div>
     </div>
     <div class="comparison-grid">
       <!-- Left: Without GetVox -->
@@ -450,7 +462,7 @@
                 <span style="font-size:0.6rem; color:var(--accent); font-weight:700;">🤖 GetVox Whisper</span>
                 <span style="font-size:0.5rem; color:#94a3b8;">🔒</span>
               </div>
-              <p id="cartoonWhisperTip" style="font-size:0.7rem; color:#065f46; margin:0;">Anchor on value — mention free home valuation before discussing price.</p>
+              <p id="cartoonWhisperTip" style="font-size:0.7rem; color:#ffffff; margin:0; font-weight:500;">Anchor on value — mention free home valuation before discussing price.</p>
             </div>
             <div style="position:absolute; top:-10px; left:50%; transform:translateX(-50%); font-size:1.5rem; color:#10b981;">✅</div>
             <svg width="80" height="130" viewBox="0 0 80 130" xmlns="http://www.w3.org/2000/svg">
@@ -1035,30 +1047,20 @@
 <!-- Cartoon tab switching -->
 <script>
   var cartoonScenarios = [
-    {
-      customerObj: '“Can you beat $3,200?”',
-      negativeDesc: 'Rep freezes, no real-time support means missed opportunities and inconsistent performance.',
-      whisperTip: 'Anchor on value — mention free home valuation before discussing price.',
-      positiveDesc: 'AI whispers real-time guidance, rep stays confident, closes more deals — 14% avg conversion lift.'
-    },
-    {
-      customerObj: '“My renewal went up 25%. Why should I stay?”',
-      negativeDesc: 'Rep fumbles, can’t recall bundling benefits, loses renewal to competitor.',
-      whisperTip: 'Retention opportunity! Highlight loyalty discounts and bundle savers before discussing price.',
-      positiveDesc: 'AI prompts rep to offer bundle review, saving the account — average 22% higher retention.'
-    },
-    {
-      customerObj: '“Your competitor offered 30% off. Why pay full price?”',
-      negativeDesc: 'Rep panics, offers unnecessary discount, cutting into margin.',
-      whisperTip: 'Differentiate on ROI, not discount. Reference 3x pipeline increase case study from similar client.',
-      positiveDesc: 'AI steers rep to ROI story, closes at full price — 18% higher average deal value.'
-    },
-    {
-      customerObj: '“We’re looking at 3 properties — can you help with all of them?”',
-      negativeDesc: 'Rep gets overwhelmed, can’t juggle multiple property details, loses lead to agent who can.',
-      whisperTip: 'Offer a Comparative Market Analysis for each property. Ask: Which one is your favorite?',
-      positiveDesc: 'AI organizes responses instantly, rep closes 2 of 3 properties — 30% faster deal cycle.'
-    }
+    { customerObj: '“Can you beat $3,200?”', negativeDesc: 'Rep freezes, no real-time support means missed opportunities and inconsistent performance.', whisperTip: 'Anchor on value — mention free home valuation before discussing price.', positiveDesc: 'AI whispers real‑time guidance, rep stays confident, closes more deals — 14% avg conversion lift.' },
+    { customerObj: '“My renewal went up 25%. Why should I stay?”', negativeDesc: 'Rep fumbles, can’t recall bundling benefits, loses renewal to competitor.', whisperTip: 'Retention opportunity! Highlight loyalty discounts and bundle savers before discussing price.', positiveDesc: 'AI prompts rep to offer bundle review, saving the account — average 22% higher retention.' },
+    { customerObj: '“Your competitor offered 30% off. Why pay full price?”', negativeDesc: 'Rep panics, offers unnecessary discount, cutting into margin.', whisperTip: 'Differentiate on ROI, not discount. Reference 3x pipeline increase case study from similar client.', positiveDesc: 'AI steers rep to ROI story, closes at full price — 18% higher average deal value.' },
+    { customerObj: '“We’re looking at 3 properties — can you help with all of them?”', negativeDesc: 'Rep gets overwhelmed, can’t juggle multiple property details, loses lead to agent who can.', whisperTip: 'Offer a Comparative Market Analysis for each property. Ask: Which one is your favorite?', positiveDesc: 'AI organizes responses instantly, rep closes 2 of 3 properties — 30% faster deal cycle.' },
+    { customerObj: '“What’s your price per watt? I got 3 other quotes.”', negativeDesc: 'Rep races to the bottom on price, sacrifices margin on a commodity comparison.', whisperTip: 'Shift to long‑term savings story: “Over 25 years, you’ll save $X in electricity — here’s the breakdown.”', positiveDesc: 'AI underscores total cost of ownership, rep wins on value — 19% higher close rate.' },
+    { customerObj: '“I spoke to 5 lawyers already — why should I hire you?”', negativeDesc: 'Rep sounds defensive, struggles to differentiate, client walks.', whisperTip: 'Personalize immediately: “Let me tell you about a case exactly like yours we won last month.”', positiveDesc: 'AI prompts empathetic story‑telling, rep secures consultation — 27% higher intake rate.' },
+    { customerObj: '“Your wait time is insane — I’ve been on hold 20 minutes.”', negativeDesc: 'Rep apologizes weakly, caller churns before issue is resolved.', whisperTip: 'Acknowledge frustration first, then offer call‑back or SMS update option to rebuild trust.', positiveDesc: 'AI de‑escalates with instant empathy template, caller stays — 35% churn reduction.' },
+    { customerObj: '“I can’t pay the full amount — can you take $50 a month?”', negativeDesc: 'Rep accepts low‑ball offer, company loses recovery potential.', whisperTip: 'Negotiate firmly but politely: “Let’s find a plan that works — with autopay I can offer $X/mo.”', positiveDesc: 'AI suggests structured payment options, rep recovers 40% more per debt.' },
+    { customerObj: '“I found a cheaper flight on Skyscanner — can you match it?”', negativeDesc: 'Rep can’t pull alternate options fast enough, loses booking.', whisperTip: 'Highlight exclusive perks (free upgrades, lounge access, flexible rebooking) that OTA can’t match.', positiveDesc: 'AI instantly lists value‑adds, rep retains booking — 22% upsell win.' },
+    { customerObj: '“I’m not sure about the monthly payment — can I think about it?”', negativeDesc: 'Rep lets prospect walk, no follow‑up plan, deal goes cold.', whisperTip: 'Warm handoff: “What if I reserve this unit for 24h with no obligation while you sleep on it?”', positiveDesc: 'AI schedules automated SMS follow‑up, rep keeps lead warm — 31% callback to close conversion.' },
+    { customerObj: '“I got a lower rate from Rocket Mortgage — can you beat 5.99%?”', negativeDesc: 'Rep can’t access real‑time rate sheet, gives vague answer, loses applicant.', whisperTip: 'Emphasize closing speed and certainty: “We close in 14 days — that’s often worth more than 0.25%.”', positiveDesc: 'AI surfaces fast‑close stats, rep locks in application — 20% pull‑through improvement.' },
+    { customerObj: '“ADT already quoted me $29/month — why are you more?”', negativeDesc: 'Rep trashes competitor, sounds unprofessional, trust evaporates.', whisperTip: 'Acknowledge competitor, pivot to your unique strengths: “Our cameras have AI facial recognition — ADT charges $10/mo extra for that.”', positiveDesc: 'AI arms rep with competitive differentiators, rep flips 1‑in‑3 objections.' },
+    { customerObj: '“We need 10 temps by Monday — can you deliver?”', negativeDesc: 'Rep over‑promises and under‑delivers, relationship sours.', whisperTip: 'Be transparent: “We have 7 ready now and 3 more by Tuesday AM — here’s the exact timeline.”', positiveDesc: 'AI calculates inventory in real time, rep sets realistic expectations — 95% satisfaction repeat rate.' },
+    { customerObj: '“I tried 3 gyms before and never went — why would this be different?”', negativeDesc: 'Rep has no rebuttal, prospect walks with a polite “maybe.”', whisperTip: 'Uncover hidden motivation: “What was missing before? We offer free personal training for the first month.”', positiveDesc: 'AI prompts discovery questions, rep overcomes hesitation — 28% trial‑to‑membership conversion.' }
   ];
 
   function switchCartoon(idx) {
